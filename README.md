@@ -14,6 +14,10 @@ Este projeto demonstra um sistema simples de login, cadastro e painel administra
    ```bash
    npm start
    ```
-A aplicação ficará disponível em `http://localhost:3000`.
+   A aplicação ficará disponível em `http://localhost:3000`.
+
+Opcionalmente, defina a variável de ambiente `REACT_APP_API_URL` para apontar
+para um backend real. Caso não seja definida, a aplicação usa um backend em
+memória e mantém o usuário autenticado no `localStorage`.
 
 Sinta-se à vontade para adaptar `src/services/api.js` para integrar com o backend desejado.
