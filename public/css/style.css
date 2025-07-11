@@ -5,3 +5,4 @@ body {
 main {
     min-height: calc(100vh - 4rem);
 }
+.navbar-link{color:#4b5563}.navbar-link:hover{color:#2563eb}

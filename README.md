@@ -38,3 +38,7 @@ Clientes e plugins agora usam Soft Deletes. Um novo migration adiciona a coluna 
 - Arquivo `phpunit.xml` para execução de testes
 
 Esses arquivos adicionais servem como ponto de partida para evoluir o sistema sem alterar o código existente.
+
+## Dashboard Interativo
+
+O dashboard exibe contadores de usuários, clientes e plugins e um gráfico em barra gerado com Chart.js. O layout utiliza um componente de navegação reutilizável e está preparado para receber outros indicadores no futuro.
