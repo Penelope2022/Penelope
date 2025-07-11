@@ -28,3 +28,13 @@ O projeto agora utiliza um layout base em `resources/views/layouts/app.blade.php
 ## Soft Deletes
 
 Clientes e plugins agora usam Soft Deletes. Um novo migration adiciona a coluna `deleted_at` e o `PluginService` remove o arquivo do plugin ao excluí-lo. Use `php artisan migrate` para aplicar.
+
+## Esqueleto Avançado
+
+- Rotas de API em `routes/api.php` prontas para uso com Laravel Sanctum
+- Repositórios em `app/Repositories` para abstrair acesso a dados
+- Controladores de API em `app/Http/Controllers/Api` usando o padrão REST
+- Testes de exemplo com Pest em `tests/Feature`
+- Arquivo `phpunit.xml` para execução de testes
+
+Esses arquivos adicionais servem como ponto de partida para evoluir o sistema sem alterar o código existente.
