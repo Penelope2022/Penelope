@@ -15,9 +15,11 @@
             <h2 class="text-2xl font-bold mb-6">Painel</h2>
             <nav class="space-y-2">
                 <a href="/panel" class="block px-2 py-1 rounded hover:bg-blue-600">Dashboard</a>
-                <a href="#" class="block px-2 py-1 rounded hover:bg-blue-600">Eventos</a>
-                <a href="#" class="block px-2 py-1 rounded hover:bg-blue-600">Ministérios</a>
-                <a href="#" class="block px-2 py-1 rounded hover:bg-blue-600">Usuários</a>
+                <a href="/panel/info" class="block px-2 py-1 rounded hover:bg-blue-600">Informações</a>
+                <a href="/panel/blog" class="block px-2 py-1 rounded hover:bg-blue-600">Blog</a>
+                <a href="/panel/downloads" class="block px-2 py-1 rounded hover:bg-blue-600">Downloads</a>
+                <a href="/panel/buttons" class="block px-2 py-1 rounded hover:bg-blue-600">Botões</a>
+                <a href="/panel/reports" class="block px-2 py-1 rounded hover:bg-blue-600">Relatórios</a>
             </nav>
             <a href="{{ url('/logout') }}" class="block mt-6 px-2 py-1 rounded bg-blue-800 hover:bg-blue-600 text-center">Sair</a>
         </aside>
