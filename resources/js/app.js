@@ -14,6 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const submenuToggles = document.querySelectorAll('[data-toggle="submenu"]');
+    submenuToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const submenu = btn.nextElementSibling;
+            if (submenu) {
+                submenu.classList.toggle('hidden');
+            }
+        });
+    });
+
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    }
+
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
