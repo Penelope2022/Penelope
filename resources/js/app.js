@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobileMenu');
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+        html.classList.add('dark');
+    }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
@@ -13,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
     }
 
