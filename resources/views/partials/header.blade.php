@@ -1,9 +1,16 @@
 <header class="sticky top-0 z-50 bg-white/70 backdrop-blur dark:bg-gray-800/70">
     <div class="container mx-auto flex justify-between items-center p-4">
         <a href="/" class="text-xl font-bold">{{ config('app.name', 'Igreja Adventista') }}</a>
-        <nav class="hidden md:flex space-x-4">
+        <nav class="hidden md:flex space-x-4 items-center">
             <a href="#sobre" class="hover:text-blue-600">Sobre</a>
-            <a href="#ministerios" class="hover:text-blue-600">Ministérios</a>
+            <div class="relative group">
+                <a href="#ministerios" class="hover:text-blue-600 inline-block">Ministérios</a>
+                <div class="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg p-4 space-y-2">
+                    <a href="#ministerios" class="block whitespace-nowrap">Jovens</a>
+                    <a href="#ministerios" class="block whitespace-nowrap">Música</a>
+                    <a href="#ministerios" class="block whitespace-nowrap">Aventureiros</a>
+                </div>
+            </div>
             <a href="#noticias" class="hover:text-blue-600">Notícias</a>
             <a href="#eventos" class="hover:text-blue-600">Eventos</a>
             <a href="#programacao" class="hover:text-blue-600">Programação</a>

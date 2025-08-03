@@ -19,4 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.AOS) {
         AOS.init();
     }
+
+    const testimonies = document.querySelectorAll('#testimonyCarousel .testimony');
+    if (testimonies.length) {
+        let index = 0;
+        setInterval(() => {
+            testimonies[index].classList.add('hidden');
+            index = (index + 1) % testimonies.length;
+            testimonies[index].classList.remove('hidden');
+        }, 5000);
+    }
 });
