@@ -41,22 +41,31 @@ try {
 <head>
 <meta charset="UTF-8" />
 <title>Mensagens</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>Mensagens</h1>
-<p><a href="dashboard.php">Voltar</a></p>
-<?php foreach ($msgs as $m): ?>
-<div style="border:1px solid #ccc;margin:5px;padding:5px;">
-<p><strong><?= htmlspecialchars($m['remetente_id']) ?>:</strong> <?= htmlspecialchars($m['conteudo']) ?></p>
-<p><small><?= htmlspecialchars($m['enviado_em']) ?></small></p>
-</div>
-<?php endforeach; ?>
-<h2>Nova mensagem</h2>
-<form method="post">
-<label>BI Destinatário: <input type="text" name="dest_bi" required></label><br>
-<label>Conteúdo:<br><textarea name="conteudo" required></textarea></label><br>
-<button type="submit">Enviar</button>
-</form>
-<p style="color:green;"><?= htmlspecialchars($message) ?></p>
+    <div class="header">
+        <a href="dashboard.php">EduManager</a>
+        <span style="float:right;">
+            <a href="logout.php">Sair</a>
+        </span>
+    </div>
+    <div class="container">
+        <h1>Mensagens</h1>
+        <p><a href="dashboard.php">Voltar</a></p>
+        <?php foreach ($msgs as $m): ?>
+        <div style="border:1px solid #ccc;margin:5px;padding:5px;">
+            <p><strong><?= htmlspecialchars($m['remetente_id']) ?>:</strong> <?= htmlspecialchars($m['conteudo']) ?></p>
+            <p><small><?= htmlspecialchars($m['enviado_em']) ?></small></p>
+        </div>
+        <?php endforeach; ?>
+        <h2>Nova mensagem</h2>
+        <form method="post">
+            <input type="text" name="dest_bi" placeholder="BI Destinatário" required>
+            <textarea name="conteudo" placeholder="Conteúdo" required></textarea>
+            <button class="btn-primary" type="submit">Enviar</button>
+        </form>
+        <?php if ($message): ?><p class="message" style="color:green;"><?= htmlspecialchars($message) ?></p><?php endif; ?>
+    </div>
 </body>
 </html>

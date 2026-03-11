@@ -59,14 +59,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8" />
     <title>EduManager Login</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>EduManager</h1>
-<form method="post">
-    <label>BI: <input type="text" name="bi" required></label><br>
-    <label>Senha: <input type="password" name="senha" required></label><br>
-    <button type="submit">Entrar</button>
-</form>
-<p style="color:red;"><?= htmlspecialchars($message) ?></p>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h1>EduManager</h1>
+            <form method="post">
+                <input type="text" name="bi" placeholder="Bilhete de Identidade" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <button class="btn-primary" type="submit">Entrar</button>
+            </form>
+            <?php if ($message): ?>
+            <p class="message"><?= htmlspecialchars($message) ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
 </body>
 </html>

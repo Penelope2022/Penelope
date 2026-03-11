@@ -36,20 +36,33 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8" />
     <title>Perfil</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>Perfil do Usuário</h1>
-<p>Nome: <?= htmlspecialchars($user['nome']) ?></p>
-<p>BI: <?= htmlspecialchars($user['bi']) ?></p>
-<p>Tipo: <?= htmlspecialchars($user['tipo']) ?></p>
+    <div class="header">
+        <a href="dashboard.php">EduManager</a>
+        <span style="float:right;">
+            <a href="logout.php">Sair</a>
+        </span>
+    </div>
+    <div class="container">
+        <h1>Perfil do Usuário</h1>
+        <p>Nome: <?= htmlspecialchars($user['nome']) ?></p>
+        <p>BI: <?= htmlspecialchars($user['bi']) ?></p>
+        <p>Tipo: <?= htmlspecialchars($user['tipo']) ?></p>
 
-<h2>Atualizar Senha</h2>
-<form method="post">
-    <label>Senha atual: <input type="password" name="senha_atual" required></label><br>
-    <label>Nova senha: <input type="password" name="nova_senha" required></label><br>
-    <button type="submit">Atualizar</button>
-</form>
-<p style="color:green;"><?= htmlspecialchars($message) ?></p>
-<p><a href="dashboard.php">Voltar ao painel</a></p>
+        <h2>Atualizar Senha</h2>
+        <form method="post">
+            <input type="password" name="senha_atual" placeholder="Senha atual" required>
+            <input type="password" name="nova_senha" placeholder="Nova senha" required>
+            <button class="btn-primary" type="submit">Atualizar</button>
+        </form>
+        <?php if ($message): ?>
+        <p class="message" style="color:green;">
+            <?= htmlspecialchars($message) ?>
+        </p>
+        <?php endif; ?>
+        <p><a href="dashboard.php">Voltar ao painel</a></p>
+    </div>
 </body>
 </html>
